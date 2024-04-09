@@ -1,4 +1,5 @@
 import 'package:dart_algorithms/data_structures/linked_list.dart';
+import 'package:dart_algorithms/data_structures/queue.dart';
 
 void main() {
   // List<List<int>> matrixA = [
@@ -17,18 +18,18 @@ void main() {
   // print(matrixC);
 
   // LinkedList
-  final list = LinkedList<int>();
-//   var list = LinkedList<int>();
-  list.push(3);
-  list.push(2);
-  list.push(1);
-//   list.append(2);
-  list.append(4);
-  list.append(5);
-//   list.append(2);
+//   final list = LinkedList<int>();
+// //   var list = LinkedList<int>();
+//   list.push(3);
+//   list.push(2);
+//   list.push(1);
+// //   list.append(2);
+//   list.append(4);
+//   list.append(5);
+// //   list.append(2);
 
-  list.removeAll(2);
-  print(list);
+//   list.removeAll(2);
+//   print(list);
 
 //   list.reverse();
 //   print(list);
@@ -53,4 +54,56 @@ void main() {
 
 //   final middleNode = getMiddle(list);
 //   print(middleNode?.value);
+
+// // QueueList
+//   final queue = QueueList<String>();
+//   queue.enqueue('Sam');
+//   queue.enqueue('Scarlett');
+//   queue.enqueue('Daisy');
+//   print(queue);
+
+//   queue.dequeue();
+//   print(queue);
+
+//   print(queue.peek);
+//   print(queue);
+
+  // // QueueLinkedList
+  // final queueLinkedList = QueueLinkedList<String>();
+  // queueLinkedList.enqueue('Sam');
+  // queueLinkedList.enqueue('Scarlett');
+  // queueLinkedList.enqueue('Daisy');
+  // print(queueLinkedList);
+
+  // queueLinkedList.dequeue();
+  // print(queueLinkedList);
+
+  // print(queueLinkedList.peek);
+  // print(queueLinkedList);
+
+  // // QueueRingBuffer
+  // final queueRingBuffer = QueueRingBuffer<String>(10);
+  // queueRingBuffer.enqueue('Sam');
+  // queueRingBuffer.enqueue('Scarlett');
+  // queueRingBuffer.enqueue('Daisy');
+  // print(queueRingBuffer);
+
+  // queueRingBuffer.dequeue();
+  // print(queueRingBuffer);
+
+  // print(queueRingBuffer.peek);
+  // print(queueRingBuffer);
+
+  // QueueStack
+  final queueStack = QueueStack<String>();
+  queueStack.enqueue('Sam');
+  queueStack.enqueue('Scarlett');
+  queueStack.enqueue('Daisy');
+  print(queueStack);
+
+  queueStack.dequeue();
+  print(queueStack);
+
+  print(queueStack.peek);
+  print(queueStack);
 }
