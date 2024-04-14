@@ -1,5 +1,5 @@
-import 'package:dart_algorithms/data_structures/linked_list.dart';
 import 'package:dart_algorithms/data_structures/queue.dart';
+import 'package:dart_algorithms/data_structures/tree.dart';
 
 void main() {
   // List<List<int>> matrixA = [
@@ -95,15 +95,62 @@ void main() {
   // print(queueRingBuffer);
 
   // QueueStack
-  final queueStack = QueueStack<String>();
-  queueStack.enqueue('Sam');
-  queueStack.enqueue('Scarlett');
-  queueStack.enqueue('Daisy');
-  print(queueStack);
+  // final queueStack = QueueStack<String>();
+  // queueStack.enqueue('Sam');
+  // queueStack.enqueue('Scarlett');
+  // queueStack.enqueue('Daisy');
+  // print(queueStack);
 
-  queueStack.dequeue();
-  print(queueStack);
+  // queueStack.dequeue();
+  // print(queueStack);
 
-  print(queueStack.peek);
-  print(queueStack);
+  // print(queueStack.peek);
+  // print(queueStack);
+
+  // Tree
+  final tree = makeBeverageTree();
+  print("Depth first traversal:");
+  tree.forEachDepthFirst((node) => print(node.value));
+  print("\nLevel order traversal:");
+  tree.forEachLevelOrder((node) => print(node.value));
+
+  final searchResult1 = tree.search('Tea');
+  print('\n${searchResult1?.value}');
+
+  final searchResult2 = tree.search('Water');
+  print(searchResult2?.value);
+}
+
+TreeNode<String> makeBeverageTree() {
+  final tree = TreeNode('Beverages');
+  final hot = TreeNode('Hot');
+  final cold = TreeNode('Cold');
+  tree.add(hot);
+  tree.add(cold);
+
+  final tea = TreeNode('Tea');
+  final coffee = TreeNode('Coffee');
+  final chocolate = TreeNode('Chocolate');
+  hot.add(tea);
+  hot.add(coffee);
+  hot.add(chocolate);
+
+  final blackTea = TreeNode('Black');
+  final greenTea = TreeNode('Green');
+  final chaiTea = TreeNode('Chai');
+  tea.add(blackTea);
+  tea.add(greenTea);
+  tea.add(chaiTea);
+
+  final soda = TreeNode('Soda');
+  final milk = TreeNode('Milk');
+  cold.add(soda);
+  cold.add(milk);
+
+  final gingerAle = TreeNode('Ginger Ale');
+  final bitterLemon = TreeNode('Bitter Lemon');
+  soda.add(gingerAle);
+  soda.add(bitterLemon);
+
+  return tree;
 }
