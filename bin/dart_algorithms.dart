@@ -1,5 +1,4 @@
-import 'package:dart_algorithms/data_structures/queue.dart';
-import 'package:dart_algorithms/data_structures/tree.dart';
+import 'package:dart_algorithms/data_structures/trees/binary_node.dart';
 
 void main() {
   // List<List<int>> matrixA = [
@@ -108,49 +107,75 @@ void main() {
   // print(queueStack);
 
   // Tree
-  final tree = makeBeverageTree();
-  print("Depth first traversal:");
-  tree.forEachDepthFirst((node) => print(node.value));
-  print("\nLevel order traversal:");
-  tree.forEachLevelOrder((node) => print(node.value));
+  // final tree = makeBeverageTree();
+  // print("Depth first traversal:");
+  // tree.forEachDepthFirst((node) => print(node.value));
+  // print("\nLevel order traversal:");
+  // tree.forEachLevelOrder((node) => print(node.value));
 
-  final searchResult1 = tree.search('Tea');
-  print('\n${searchResult1?.value}');
+  // final searchResult1 = tree.search('Tea');
+  // print('\n${searchResult1?.value}');
 
-  final searchResult2 = tree.search('Water');
-  print(searchResult2?.value);
+  // final searchResult2 = tree.search('Water');
+  // print(searchResult2?.value);
+
+  // Binary Tree
+  // final tree = createBinaryTree();
+  // // print(tree);
+  // tree.traverseInOrder(print);
+  // // tree.traversePreOrder(print);
+  // // tree.traversePostOrder(print);
 }
 
-TreeNode<String> makeBeverageTree() {
-  final tree = TreeNode('Beverages');
-  final hot = TreeNode('Hot');
-  final cold = TreeNode('Cold');
-  tree.add(hot);
-  tree.add(cold);
+// Build Binary Tree
+// BinaryNode<int> createBinaryTree() {
+//   final zero = BinaryNode(0);
+//   final one = BinaryNode(1);
+//   final five = BinaryNode(5);
+//   final seven = BinaryNode(7);
+//   final eight = BinaryNode(8);
+//   final nine = BinaryNode(9);
 
-  final tea = TreeNode('Tea');
-  final coffee = TreeNode('Coffee');
-  final chocolate = TreeNode('Chocolate');
-  hot.add(tea);
-  hot.add(coffee);
-  hot.add(chocolate);
+//   seven.leftChild = one;
+//   one.leftChild = zero;
+//   one.rightChild = five;
+//   seven.rightChild = nine;
+//   nine.leftChild = eight;
 
-  final blackTea = TreeNode('Black');
-  final greenTea = TreeNode('Green');
-  final chaiTea = TreeNode('Chai');
-  tea.add(blackTea);
-  tea.add(greenTea);
-  tea.add(chaiTea);
+//   return seven;
+// }
 
-  final soda = TreeNode('Soda');
-  final milk = TreeNode('Milk');
-  cold.add(soda);
-  cold.add(milk);
+// Build tree
+// TreeNode<String> makeBeverageTree() {
+//   final tree = TreeNode('Beverages');
+//   final hot = TreeNode('Hot');
+//   final cold = TreeNode('Cold');
+//   tree.add(hot);
+//   tree.add(cold);
 
-  final gingerAle = TreeNode('Ginger Ale');
-  final bitterLemon = TreeNode('Bitter Lemon');
-  soda.add(gingerAle);
-  soda.add(bitterLemon);
+//   final tea = TreeNode('Tea');
+//   final coffee = TreeNode('Coffee');
+//   final chocolate = TreeNode('Chocolate');
+//   hot.add(tea);
+//   hot.add(coffee);
+//   hot.add(chocolate);
 
-  return tree;
-}
+//   final blackTea = TreeNode('Black');
+//   final greenTea = TreeNode('Green');
+//   final chaiTea = TreeNode('Chai');
+//   tea.add(blackTea);
+//   tea.add(greenTea);
+//   tea.add(chaiTea);
+
+//   final soda = TreeNode('Soda');
+//   final milk = TreeNode('Milk');
+//   cold.add(soda);
+//   cold.add(milk);
+
+//   final gingerAle = TreeNode('Ginger Ale');
+//   final bitterLemon = TreeNode('Bitter Lemon');
+//   soda.add(gingerAle);
+//   soda.add(bitterLemon);
+
+//   return tree;
+// }
