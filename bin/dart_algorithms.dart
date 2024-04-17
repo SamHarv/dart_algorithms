@@ -1,4 +1,4 @@
-import 'package:dart_algorithms/data_structures/trees/binary_node.dart';
+import 'package:dart_algorithms/data_structures/trees/binary_search_tree.dart';
 
 void main() {
   // List<List<int>> matrixA = [
@@ -125,6 +125,36 @@ void main() {
   // tree.traverseInOrder(print);
   // // tree.traversePreOrder(print);
   // // tree.traversePostOrder(print);
+
+  // Binary Search Tree
+  // final tree = BinarySearchTree<num>();
+  // for (var i = 0; i < 5; i++) {
+  //   tree.insert(i);
+  // }
+  // print(tree);
+  final tree = buildExampleTree();
+  // if (tree.contains(5)) {
+  //   print("Found 5!");
+  // } else {
+  //   print("Did not find 5");
+  // }
+  print("Tree before removal:");
+  print(tree);
+  tree.remove(3);
+  print("Tree after removal:");
+  print(tree);
+}
+
+// Build Balanced Binary Search Tree
+BinarySearchTree<num> buildExampleTree() {
+  final tree = BinarySearchTree<num>();
+  tree.insert(3);
+  tree.insert(1);
+  tree.insert(4);
+  tree.insert(0);
+  tree.insert(2);
+  tree.insert(5);
+  return tree;
 }
 
 // Build Binary Tree
