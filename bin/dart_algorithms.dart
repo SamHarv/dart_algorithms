@@ -1,4 +1,5 @@
-import 'package:dart_algorithms/data_structures/trees/binary_search_tree.dart';
+import 'package:dart_algorithms/data_structures/trees/avl_tree.dart';
+// import 'package:dart_algorithms/data_structures/trees/binary_search_tree.dart';
 
 void main() {
   // List<List<int>> matrixA = [
@@ -132,30 +133,40 @@ void main() {
   //   tree.insert(i);
   // }
   // print(tree);
-  final tree = buildExampleTree();
-  // if (tree.contains(5)) {
-  //   print("Found 5!");
-  // } else {
-  //   print("Did not find 5");
-  // }
-  print("Tree before removal:");
+  // final tree = buildExampleTree();
+  // // if (tree.contains(5)) {
+  // //   print("Found 5!");
+  // // } else {
+  // //   print("Did not find 5");
+  // // }
+  // print("Tree before removal:");
+  // print(tree);
+  // tree.remove(3);
+  // print("Tree after removal:");
+  // print(tree);
+
+  // AVL Tree
+  final tree = AvlTree<num>();
+  tree.insert(15);
+  tree.insert(10);
+  tree.insert(16);
+  tree.insert(18);
   print(tree);
-  tree.remove(3);
-  print("Tree after removal:");
+  tree.remove(10);
   print(tree);
 }
 
 // Build Balanced Binary Search Tree
-BinarySearchTree<num> buildExampleTree() {
-  final tree = BinarySearchTree<num>();
-  tree.insert(3);
-  tree.insert(1);
-  tree.insert(4);
-  tree.insert(0);
-  tree.insert(2);
-  tree.insert(5);
-  return tree;
-}
+// BinarySearchTree<num> buildExampleTree() {
+//   final tree = BinarySearchTree<num>();
+//   tree.insert(3);
+//   tree.insert(1);
+//   tree.insert(4);
+//   tree.insert(0);
+//   tree.insert(2);
+//   tree.insert(5);
+//   return tree;
+// }
 
 // Build Binary Tree
 // BinaryNode<int> createBinaryTree() {
