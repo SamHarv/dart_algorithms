@@ -1,4 +1,6 @@
-import 'package:dart_algorithms/data_structures/trees/avl_tree.dart';
+import 'package:dart_algorithms/data_structures/trees/avl_tree/avl_tree.dart';
+import 'package:dart_algorithms/data_structures/trees/tries/string_trie.dart';
+import 'package:dart_algorithms/data_structures/trees/tries/trie.dart';
 // import 'package:dart_algorithms/data_structures/trees/binary_search_tree.dart';
 
 void main() {
@@ -146,14 +148,41 @@ void main() {
   // print(tree);
 
   // AVL Tree
-  final tree = AvlTree<num>();
-  tree.insert(15);
-  tree.insert(10);
-  tree.insert(16);
-  tree.insert(18);
-  print(tree);
-  tree.remove(10);
-  print(tree);
+  // final tree = AvlTree<num>();
+  // tree.insert(15);
+  // tree.insert(10);
+  // tree.insert(16);
+  // tree.insert(18);
+  // print(tree);
+  // tree.remove(10);
+  // print(tree);
+
+  // String Trie
+  // final trie = StringTrie();
+  // trie.insert('car');
+  // trie.insert('card');
+  // trie.insert('care');
+  // trie.insert('cared');
+  // trie.insert('cars');
+  // trie.insert('carbs');
+  // trie.insert('carapace');
+  // trie.insert('cargo');
+  // print('Collections starting with "car":');
+  // final prefixedWithCar = trie.matchPrefix('car');
+  // print(prefixedWithCar);
+  // print('\nCollections starting with "care":');
+  // final prefixedWithCare = trie.matchPrefix('care');
+  // print(prefixedWithCare);
+
+  // Trie
+  final trie = Trie<int, List<int>>();
+  trie.insert('cut'.codeUnits);
+  trie.insert('cute'.codeUnits);
+  if (trie.contains('cute'.codeUnits)) {
+    print('Found "cute"');
+  }
+  trie.remove('cut'.codeUnits);
+  assert(!trie.contains('cut'.codeUnits));
 }
 
 // Build Balanced Binary Search Tree
