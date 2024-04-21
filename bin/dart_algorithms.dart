@@ -1,7 +1,9 @@
-import 'package:dart_algorithms/data_structures/trees/avl_tree/avl_tree.dart';
-import 'package:dart_algorithms/data_structures/trees/tries/string_trie.dart';
-import 'package:dart_algorithms/data_structures/trees/tries/trie.dart';
+// import 'package:dart_algorithms/data_structures/trees/avl_tree/avl_tree.dart';
+// import 'package:dart_algorithms/data_structures/trees/tries/string_trie.dart';
+// import 'package:dart_algorithms/data_structures/trees/tries/trie.dart';
 // import 'package:dart_algorithms/data_structures/trees/binary_search_tree.dart';
+
+import 'package:dart_algorithms/search/binary_search.dart';
 
 void main() {
   // List<List<int>> matrixA = [
@@ -175,14 +177,21 @@ void main() {
   // print(prefixedWithCare);
 
   // Trie
-  final trie = Trie<int, List<int>>();
-  trie.insert('cut'.codeUnits);
-  trie.insert('cute'.codeUnits);
-  if (trie.contains('cute'.codeUnits)) {
-    print('Found "cute"');
-  }
-  trie.remove('cut'.codeUnits);
-  assert(!trie.contains('cut'.codeUnits));
+  // final trie = Trie<int, List<int>>();
+  // trie.insert('cut'.codeUnits);
+  // trie.insert('cute'.codeUnits);
+  // if (trie.contains('cute'.codeUnits)) {
+  //   print('Found "cute"');
+  // }
+  // trie.remove('cut'.codeUnits);
+  // assert(!trie.contains('cut'.codeUnits));
+
+  // Binary Search
+  final list = <num>[1, 2, 3, 4, 5, 6, 7, 8, 9];
+  final search8 = list.indexOf(8);
+  final binarySearch8 = list.binarySearch(8);
+  print('Index of: $search8');
+  print('Binary search: $binarySearch8');
 }
 
 // Build Balanced Binary Search Tree
