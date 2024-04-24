@@ -3,7 +3,8 @@
 // import 'package:dart_algorithms/data_structures/trees/tries/trie.dart';
 // import 'package:dart_algorithms/data_structures/trees/binary_search_tree.dart';
 
-import 'package:dart_algorithms/data_structures/trees/heap.dart';
+import 'package:dart_algorithms/data_structures/priority_queue.dart';
+// import 'package:dart_algorithms/data_structures/trees/heap.dart';
 // import 'package:dart_algorithms/search/binary_search.dart';
 
 void main() {
@@ -195,15 +196,23 @@ void main() {
   // print('Binary search: $binarySearch8');
 
   // Heap
-  final heap = Heap<num>();
-  heap.insert(10);
-  heap.insert(7);
-  heap.insert(2);
-  heap.insert(5);
-  heap.insert(1);
-  final index = heap.indexOf(7);
-  print(heap);
-  print(index);
+  // final heap = Heap<num>();
+  // heap.insert(10);
+  // heap.insert(7);
+  // heap.insert(2);
+  // heap.insert(5);
+  // heap.insert(1);
+  // final index = heap.indexOf(7);
+  // print(heap);
+  // print(index);
+
+  // Priority Queue
+  var priorityQueue = PriorityQueue<num>(
+    elements: [1, 12, 3, 4, 1, 6, 8, 7],
+  );
+  while (!priorityQueue.isEmpty) {
+    print(priorityQueue.dequeue()!);
+  }
 }
 
 // Build Balanced Binary Search Tree
