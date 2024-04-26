@@ -1,17 +1,14 @@
-class BubbleSort {
-  // Bubble sort O(n^2)
-  List<int> bubbleSort(List<int> list) {
-    for (int i = 0; i < list.length; i++) {
-      for (int j = list.length - 1; j > i; j--) {
-        if (list[j] < list[j - 1]) {
-          int temp = list[j];
-          list[j] = list[j - 1];
-          list[j - 1] = temp;
-        }
-        print("Inner loop: $list");
+import 'swap.dart';
+
+void bubbleSort<E extends Comparable<E>>(List<E> list) {
+  for (var end = list.length - 1; end > 0; end--) {
+    var swapped = false;
+    for (var current = 0; current < end; current++) {
+      if (list[current].compareTo(list[current + 1]) > 0) {
+        list.swap(current, current + 1);
+        swapped = true;
       }
-      print("Outer loop: $list");
     }
-    return list;
+    if (!swapped) return;
   }
 }

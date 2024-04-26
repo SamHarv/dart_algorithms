@@ -1,15 +1,13 @@
-class InsertionSort {
-  // Insertion sort O(n^2)
-  List<int> insertionSort(List<int> list) {
-    for (int i = 1; i < list.length; i++) {
-      int key = list[i];
-      int j = i - 1;
-      while (j >= 0 && list[j] > key) {
-        list[j + 1] = list[j];
-        j = j - 1;
+import 'swap.dart';
+
+void insertionSort<E extends Comparable<E>>(List<E> list) {
+  for (var current = 1; current < list.length; current++) {
+    for (var shifting = current; shifting > 0; shifting--) {
+      if (list[shifting].compareTo(list[shifting - 1]) < 0) {
+        list.swap(shifting, shifting - 1);
+      } else {
+        break;
       }
-      list[j + 1] = key;
     }
-    return list;
   }
 }

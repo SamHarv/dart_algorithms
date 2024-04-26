@@ -3,7 +3,10 @@
 // import 'package:dart_algorithms/data_structures/trees/tries/trie.dart';
 // import 'package:dart_algorithms/data_structures/trees/binary_search_tree.dart';
 
-import 'package:dart_algorithms/data_structures/priority_queue.dart';
+// import 'package:dart_algorithms/data_structures/priority_queue.dart';
+import 'package:dart_algorithms/sorting/bubble_sort.dart';
+import 'package:dart_algorithms/sorting/insertion_sort.dart';
+import 'package:dart_algorithms/sorting/selection_sort.dart';
 // import 'package:dart_algorithms/data_structures/trees/heap.dart';
 // import 'package:dart_algorithms/search/binary_search.dart';
 
@@ -207,12 +210,20 @@ void main() {
   // print(index);
 
   // Priority Queue
-  var priorityQueue = PriorityQueue<num>(
-    elements: [1, 12, 3, 4, 1, 6, 8, 7],
-  );
-  while (!priorityQueue.isEmpty) {
-    print(priorityQueue.dequeue()!);
-  }
+  // var priorityQueue = PriorityQueue<num>(
+  //   elements: [1, 12, 3, 4, 1, 6, 8, 7],
+  // );
+  // while (!priorityQueue.isEmpty) {
+  //   print(priorityQueue.dequeue()!);
+  // }
+
+  // Bubble Sort
+  final list = <num>[9, 4, 10, 3];
+  print("Original: $list");
+  // bubbleSort(list);
+  // selectionSort(list);
+  insertionSort(list);
+  print("Sorted: $list");
 }
 
 // Build Balanced Binary Search Tree
