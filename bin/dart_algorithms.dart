@@ -4,11 +4,13 @@
 // import 'package:dart_algorithms/data_structures/trees/binary_search_tree.dart';
 
 // import 'package:dart_algorithms/data_structures/priority_queue.dart';
-import 'package:dart_algorithms/sorting/bubble_sort.dart';
-import 'package:dart_algorithms/sorting/insertion_sort.dart';
-import 'package:dart_algorithms/sorting/selection_sort.dart';
+// import 'package:dart_algorithms/sorting/bubble_sort.dart';
+// import 'package:dart_algorithms/sorting/insertion_sort.dart';
+// import 'package:dart_algorithms/sorting/selection_sort.dart';
 // import 'package:dart_algorithms/data_structures/trees/heap.dart';
 // import 'package:dart_algorithms/search/binary_search.dart';
+
+import 'package:dart_algorithms/sorting/merge_sort.dart';
 
 void main() {
   // List<List<int>> matrixA = [
@@ -217,13 +219,19 @@ void main() {
   //   print(priorityQueue.dequeue()!);
   // }
 
-  // Bubble Sort
-  final list = <num>[9, 4, 10, 3];
+  // Bubble, selection and insertion Sort
+  // final list = <num>[9, 4, 10, 3];
+  // print("Original: $list");
+  // // bubbleSort(list);
+  // // selectionSort(list);
+  // insertionSort(list);
+  // print("Sorted: $list");
+
+  // Merge Sort
+  final list = <num>[7, 2, 6, 3, 9];
+  final sorted = mergeSort(list);
   print("Original: $list");
-  // bubbleSort(list);
-  // selectionSort(list);
-  insertionSort(list);
-  print("Sorted: $list");
+  print("Sorted: $sorted");
 }
 
 // Build Balanced Binary Search Tree
