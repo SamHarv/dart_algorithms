@@ -11,6 +11,7 @@
 // import 'package:dart_algorithms/search/binary_search.dart';
 
 import 'package:dart_algorithms/sorting/merge_sort.dart';
+import 'package:dart_algorithms/sorting/radix_sort.dart';
 
 void main() {
   // List<List<int>> matrixA = [
@@ -228,10 +229,20 @@ void main() {
   // print("Sorted: $list");
 
   // Merge Sort
-  final list = <num>[7, 2, 6, 3, 9];
-  final sorted = mergeSort(list);
+  // final list = <num>[7, 2, 6, 3, 9];
+  // final sorted = mergeSort(list);
+  // print("Original: $list");
+  // print("Sorted: $sorted");
+
+  // Radix Sort
+  final list = <int>[170, 45, 75, 90, 802, 24, 2, 66];
   print("Original: $list");
-  print("Sorted: $sorted");
+  // list.radixSort();
+  // print("Sorted: $list");
+  // print(13.digits());
+  // print(1345.digitAt(2));
+  list.lexicographicalSort();
+  print("Sorted: $list");
 }
 
 // Build Balanced Binary Search Tree
