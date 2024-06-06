@@ -10,6 +10,7 @@
 // import 'package:dart_algorithms/data_structures/trees/heap.dart';
 // import 'package:dart_algorithms/search/binary_search.dart';
 
+import 'package:dart_algorithms/sorting/heap_sort.dart';
 import 'package:dart_algorithms/sorting/merge_sort.dart';
 import 'package:dart_algorithms/sorting/radix_sort.dart';
 
@@ -235,13 +236,21 @@ void main() {
   // print("Sorted: $sorted");
 
   // Radix Sort
-  final list = <int>[170, 45, 75, 90, 802, 24, 2, 66];
-  print("Original: $list");
-  // list.radixSort();
+  // final list = <int>[170, 45, 75, 90, 802, 24, 2, 66];
+  // print("Original: $list");
+  // // list.radixSort();
+  // // print("Sorted: $list");
+  // // print(13.digits());
+  // // print(1345.digitAt(2));
+  // list.lexicographicalSort();
   // print("Sorted: $list");
-  // print(13.digits());
-  // print(1345.digitAt(2));
-  list.lexicographicalSort();
+
+  // Heap Sort
+  // final sorted = heapSort<num>([9, 4, 10, 3]);
+  // print(sorted);
+  final list = <num>[6, 12, 2, 26, 8, 18, 21, 9, 5];
+  print("Original: $list");
+  list.heapSortInPlace();
   print("Sorted: $list");
 }
 
