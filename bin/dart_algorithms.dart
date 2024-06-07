@@ -13,6 +13,7 @@
 import 'package:dart_algorithms/sorting/heap_sort.dart';
 import 'package:dart_algorithms/sorting/merge_sort.dart';
 import 'package:dart_algorithms/sorting/radix_sort.dart';
+import 'package:dart_algorithms/sorting/quick_sort.dart';
 
 void main() {
   // List<List<int>> matrixA = [
@@ -248,9 +249,15 @@ void main() {
   // Heap Sort
   // final sorted = heapSort<num>([9, 4, 10, 3]);
   // print(sorted);
-  final list = <num>[6, 12, 2, 26, 8, 18, 21, 9, 5];
+  // final list = <num>[6, 12, 2, 26, 8, 18, 21, 9, 5];
+  // print("Original: $list");
+  // list.heapSortInPlace();
+  // print("Sorted: $list");
+
+  // Quick Sort
+  final list = <num>[9, 4, 10, 3];
   print("Original: $list");
-  list.heapSortInPlace();
+  quickSortDutchFlag(list, 0, list.length - 1);
   print("Sorted: $list");
 }
 
