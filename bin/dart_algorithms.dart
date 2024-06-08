@@ -11,6 +11,8 @@
 // import 'package:dart_algorithms/search/binary_search.dart';
 
 import 'package:dart_algorithms/data_structures/graphs/graph.dart';
+import 'package:dart_algorithms/search/breadth_first_search.dart';
+import 'package:dart_algorithms/search/depth_first_search.dart';
 import 'package:dart_algorithms/sorting/heap_sort.dart';
 import 'package:dart_algorithms/sorting/merge_sort.dart';
 import 'package:dart_algorithms/sorting/radix_sort.dart';
@@ -265,35 +267,69 @@ void main() {
   // AdjacencyList
   // final graph = AdjacencyList<String>();
   // AdjacencyMatrix
-  final graph = AdjacencyMatrix<String>();
-  final singapore = graph.createVertex('Singapore');
-  final tokyo = graph.createVertex('Tokyo');
-  final hongKong = graph.createVertex('Hong Kong');
-  final detroit = graph.createVertex('Detroit');
-  final sanFrancisco = graph.createVertex('San Francisco');
-  final washingtonDC = graph.createVertex('Washington DC');
-  final austinTexas = graph.createVertex('Austin Texas');
-  final seattle = graph.createVertex('Seattle');
-  graph.addEdge(singapore, hongKong, weight: 300);
-  graph.addEdge(singapore, tokyo, weight: 500);
-  graph.addEdge(hongKong, tokyo, weight: 250);
-  graph.addEdge(tokyo, detroit, weight: 450);
-  graph.addEdge(tokyo, washingtonDC, weight: 300);
-  graph.addEdge(hongKong, sanFrancisco, weight: 600);
-  graph.addEdge(detroit, austinTexas, weight: 50);
-  graph.addEdge(austinTexas, washingtonDC, weight: 292);
-  graph.addEdge(sanFrancisco, washingtonDC, weight: 337);
-  graph.addEdge(washingtonDC, seattle, weight: 277);
-  graph.addEdge(sanFrancisco, seattle, weight: 218);
-  graph.addEdge(austinTexas, sanFrancisco, weight: 297);
+  // final graph = AdjacencyMatrix<String>();
+  // final singapore = graph.createVertex('Singapore');
+  // final tokyo = graph.createVertex('Tokyo');
+  // final hongKong = graph.createVertex('Hong Kong');
+  // final detroit = graph.createVertex('Detroit');
+  // final sanFrancisco = graph.createVertex('San Francisco');
+  // final washingtonDC = graph.createVertex('Washington DC');
+  // final austinTexas = graph.createVertex('Austin Texas');
+  // final seattle = graph.createVertex('Seattle');
+  // graph.addEdge(singapore, hongKong, weight: 300);
+  // graph.addEdge(singapore, tokyo, weight: 500);
+  // graph.addEdge(hongKong, tokyo, weight: 250);
+  // graph.addEdge(tokyo, detroit, weight: 450);
+  // graph.addEdge(tokyo, washingtonDC, weight: 300);
+  // graph.addEdge(hongKong, sanFrancisco, weight: 600);
+  // graph.addEdge(detroit, austinTexas, weight: 50);
+  // graph.addEdge(austinTexas, washingtonDC, weight: 292);
+  // graph.addEdge(sanFrancisco, washingtonDC, weight: 337);
+  // graph.addEdge(washingtonDC, seattle, weight: 277);
+  // graph.addEdge(sanFrancisco, seattle, weight: 218);
+  // graph.addEdge(austinTexas, sanFrancisco, weight: 297);
+  // print(graph);
+  // final cost = graph.weight(singapore, tokyo)?.toInt();
+  // print('Cost: $cost');
+  // print('San Francisco Ongoing Flights:');
+  // for (final edge in graph.edges(sanFrancisco)) {
+  //   print(
+  //       'from: ${edge.source}, to: ${edge.destination}, cost: ${edge.weight}');
+  // }
+
+  // BFS
+  final graph = AdjacencyList<String>();
+  final a = graph.createVertex('A');
+  final b = graph.createVertex('B');
+  final c = graph.createVertex('C');
+  final d = graph.createVertex('D');
+  // final e = graph.createVertex('E');
+  // final f = graph.createVertex('F');
+  // final g = graph.createVertex('G');
+  // final h = graph.createVertex('H');
+  // graph.addEdge(a, b, weight: 1);
+  // graph.addEdge(a, c, weight: 1);
+  // graph.addEdge(a, d, weight: 1);
+  // graph.addEdge(b, e, weight: 1);
+  // // graph.addEdge(c, f, weight: 1);
+  // graph.addEdge(c, g, weight: 1);
+  // graph.addEdge(e, f, weight: 1);
+  // graph.addEdge(e, h, weight: 1);
+  // graph.addEdge(f, g, weight: 1);
+  // graph.addEdge(f, c, weight: 1);
+  // final vertices = graph.breadthFirstSearch(a);
+  // vertices.forEach(print);
+  graph.addEdge(a, b, edgeType: EdgeType.directed);
+  graph.addEdge(a, c, edgeType: EdgeType.directed);
+  graph.addEdge(c, a, edgeType: EdgeType.directed);
+  graph.addEdge(b, c, edgeType: EdgeType.directed);
+  graph.addEdge(c, d, edgeType: EdgeType.directed);
+
+  // DFS
+  // final vertices = graph.depthFirstSearch(a);
+  // vertices.forEach(print);
   print(graph);
-  final cost = graph.weight(singapore, tokyo)?.toInt();
-  print('Cost: $cost');
-  print('San Francisco Ongoing Flights:');
-  for (final edge in graph.edges(sanFrancisco)) {
-    print(
-        'from: ${edge.source}, to: ${edge.destination}, cost: ${edge.weight}');
-  }
+  print(graph.hasCycle(a));
 }
 
 // Build Balanced Binary Search Tree
