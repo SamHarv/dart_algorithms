@@ -13,6 +13,7 @@
 import 'package:dart_algorithms/data_structures/graphs/graph.dart';
 import 'package:dart_algorithms/search/breadth_first_search.dart';
 import 'package:dart_algorithms/search/depth_first_search.dart';
+import 'package:dart_algorithms/search/dijkstra.dart';
 import 'package:dart_algorithms/sorting/heap_sort.dart';
 import 'package:dart_algorithms/sorting/merge_sort.dart';
 import 'package:dart_algorithms/sorting/radix_sort.dart';
@@ -298,11 +299,11 @@ void main() {
   // }
 
   // BFS
-  final graph = AdjacencyList<String>();
-  final a = graph.createVertex('A');
-  final b = graph.createVertex('B');
-  final c = graph.createVertex('C');
-  final d = graph.createVertex('D');
+  // final graph = AdjacencyList<String>();
+  // final a = graph.createVertex('A');
+  // final b = graph.createVertex('B');
+  // final c = graph.createVertex('C');
+  // final d = graph.createVertex('D');
   // final e = graph.createVertex('E');
   // final f = graph.createVertex('F');
   // final g = graph.createVertex('G');
@@ -319,17 +320,46 @@ void main() {
   // graph.addEdge(f, c, weight: 1);
   // final vertices = graph.breadthFirstSearch(a);
   // vertices.forEach(print);
-  graph.addEdge(a, b, edgeType: EdgeType.directed);
-  graph.addEdge(a, c, edgeType: EdgeType.directed);
-  graph.addEdge(c, a, edgeType: EdgeType.directed);
-  graph.addEdge(b, c, edgeType: EdgeType.directed);
-  graph.addEdge(c, d, edgeType: EdgeType.directed);
+  // graph.addEdge(a, b, edgeType: EdgeType.directed);
+  // graph.addEdge(a, c, edgeType: EdgeType.directed);
+  // graph.addEdge(c, a, edgeType: EdgeType.directed);
+  // graph.addEdge(b, c, edgeType: EdgeType.directed);
+  // graph.addEdge(c, d, edgeType: EdgeType.directed);
 
   // DFS
   // final vertices = graph.depthFirstSearch(a);
   // vertices.forEach(print);
-  print(graph);
-  print(graph.hasCycle(a));
+  // print(graph);
+  // print(graph.hasCycle(a));
+
+  // Dijsktra
+  final graph = AdjacencyList<String>();
+  final a = graph.createVertex('A');
+  final b = graph.createVertex('B');
+  final c = graph.createVertex('C');
+  final d = graph.createVertex('D');
+  final e = graph.createVertex('E');
+  final f = graph.createVertex('F');
+  final g = graph.createVertex('G');
+  final h = graph.createVertex('H');
+  graph.addEdge(a, b, weight: 8, edgeType: EdgeType.directed);
+  graph.addEdge(a, f, weight: 9, edgeType: EdgeType.directed);
+  graph.addEdge(a, g, weight: 1, edgeType: EdgeType.directed);
+  graph.addEdge(g, c, weight: 3, edgeType: EdgeType.directed);
+  graph.addEdge(c, b, weight: 3, edgeType: EdgeType.directed);
+  graph.addEdge(c, e, weight: 1, edgeType: EdgeType.directed);
+  graph.addEdge(e, b, weight: 1, edgeType: EdgeType.directed);
+  graph.addEdge(e, d, weight: 2, edgeType: EdgeType.directed);
+  graph.addEdge(d, e, weight: 1, edgeType: EdgeType.directed);
+  graph.addEdge(b, f, weight: 3, edgeType: EdgeType.directed);
+  graph.addEdge(f, a, weight: 2, edgeType: EdgeType.directed);
+  graph.addEdge(h, g, weight: 5, edgeType: EdgeType.directed);
+  graph.addEdge(h, f, weight: 2, edgeType: EdgeType.directed);
+  final dijkstra = Dijkstra(graph);
+  final allPaths = dijkstra.shortestPaths(a);
+  print(allPaths);
+  final path = dijkstra.shortestPath(a, d);
+  print(path);
 }
 
 // Build Balanced Binary Search Tree
